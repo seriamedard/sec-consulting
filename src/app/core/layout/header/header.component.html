@@ -1,4 +1,4 @@
-<header 
+<header
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
   [class.bg-white]="isScrolled()"
   [class.shadow-sm]="isScrolled()"
@@ -6,16 +6,18 @@
   <div class="container-custom">
     <nav class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <a routerLink="/" class="flex items-center gap-2 text-text-dark hover:text-text-dark">
-        <span class="text-2xl font-bold">SEC</span>
-        <span class="text-2xl font-bold text-primary">CONSULTING</span>
+      <a routerLink="/" class="flex items-center">
+        <img
+          src="assets/logo-sec-consulting.png"
+          alt="SEC-CONSULTING"
+          class="h-12 w-auto">
       </a>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-8">
         @for (item of navItems; track item.route) {
-          <a 
-            [routerLink]="item.route" 
+          <a
+            [routerLink]="item.route"
             routerLinkActive="text-primary font-semibold"
             [routerLinkActiveOptions]="{ exact: item.route === '/' }"
             class="text-text-dark hover:text-primary transition-colors duration-fast font-medium">
@@ -25,14 +27,14 @@
       </div>
 
       <!-- CTA Button (Desktop) -->
-      <a 
-        routerLink="/contact" 
+      <a
+        routerLink="/contact"
         class="hidden md:inline-flex btn-primary">
         Demander un diagnostic
       </a>
 
       <!-- Mobile Menu Button -->
-      <button 
+      <button
         class="md:hidden p-2 text-text-dark"
         (click)="toggleMenu()"
         [attr.aria-expanded]="isMenuOpen()"
@@ -52,13 +54,13 @@
 
   <!-- Mobile Menu Overlay -->
   @if (isMenuOpen()) {
-    <div 
+    <div
       class="fixed inset-0 top-20 bg-white z-40 md:hidden animate-fadeIn"
       (click)="closeMenu()">
       <div class="container-custom py-8">
         <div class="flex flex-col gap-4">
           @for (item of navItems; track item.route) {
-            <a 
+            <a
               [routerLink]="item.route"
               routerLinkActive="text-primary font-semibold"
               [routerLinkActiveOptions]="{ exact: item.route === '/' }"
@@ -67,7 +69,7 @@
               {{ item.label }}
             </a>
           }
-          <a 
+          <a
             routerLink="/contact"
             (click)="closeMenu()"
             class="btn-primary mt-4 text-center">

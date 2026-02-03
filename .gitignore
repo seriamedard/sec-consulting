@@ -45,3 +45,9 @@ Thumbs.db
 .amplify
 amplify_outputs*
 amplifyconfiguration*
+
+# Environment files (contain secrets)
+src/environments/environment.local.ts
+.env
+.env.local
+.env.*.local
