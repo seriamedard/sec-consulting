@@ -1,0 +1,91 @@
+<!-- Hero Section -->
+<app-page-hero
+  title="Études de cas"
+  subtitle="Quelques missions représentatives et résultats obtenus."
+  background="white">
+</app-page-hero>
+
+<!-- Filters -->
+<section class="py-8 bg-white border-b border-gray-100">
+  <div class="container-custom">
+    <div class="flex flex-wrap justify-center gap-3">
+      @for (filter of filters; track filter) {
+        <button 
+          (click)="setFilter(filter)"
+          class="px-4 py-2 rounded-pill text-sm font-medium transition-all"
+          [class.bg-primary]="activeFilter() === filter"
+          [class.text-white]="activeFilter() === filter"
+          [class.bg-gray-100]="activeFilter() !== filter"
+          [class.text-text-dark]="activeFilter() !== filter"
+          [class.hover:bg-gray-200]="activeFilter() !== filter">
+          {{ filter }}
+        </button>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Case Studies Grid -->
+<section class="section bg-gray-50">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (caseStudy of filteredCases(); track caseStudy.client) {
+        <article class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="relative h-48">
+            <img 
+              [src]="caseStudy.imageSrc" 
+              [alt]="caseStudy.client"
+              class="w-full h-full object-cover"
+              loading="lazy">
+            <div class="absolute top-4 left-4">
+              <app-badge>{{ caseStudy.serviceUsed }}</app-badge>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">{{ caseStudy.industry }}</div>
+            <h3 class="heading-3 mb-3">{{ caseStudy.client }}</h3>
+            
+            <div class="space-y-3 text-sm">
+              <div>
+                <span class="font-semibold text-text-dark">Défi :</span>
+                <span class="text-gray-600 ml-1">{{ caseStudy.challenge }}</span>
+              </div>
+              <div>
+                <span class="font-semibold text-primary">Résultat :</span>
+                <span class="text-gray-600 ml-1">{{ caseStudy.result }}</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+
+    @if (filteredCases().length === 0) {
+      <div class="text-center py-12">
+        <p class="text-gray-500">Aucune étude de cas pour ce filtre.</p>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Highlight Band -->
+<section class="py-16 bg-primary">
+  <div class="container-custom text-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+      Notre histoire commence par des solutions concrètes
+    </h2>
+    <p class="text-white/80 max-w-2xl mx-auto">
+      Chaque mission est cadrée, pilotée et mesurée pour livrer de la valeur rapidement. 
+      Nous nous engageons sur des résultats concrets et mesurables.
+    </p>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<app-cta-band
+  title="Vous avez un projet similaire ?"
+  text="Contactez-nous pour discuter de vos enjeux et découvrir comment nous pouvons vous accompagner."
+  ctaLabel="Demander un diagnostic"
+  ctaRoute="/contact"
+  variant="dark">
+</app-cta-band>

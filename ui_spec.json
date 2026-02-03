@@ -1,0 +1,693 @@
+{
+  "meta": {
+    "project": "sec-consulting.org",
+    "target_framework": "Angular",
+    "design_language": "modern-professional-friendly",
+    "layout_strategy": "mobile-first",
+    "breakpoints_px": {
+      "xs": 0,
+      "sm": 640,
+      "md": 1024,
+      "lg": 1280
+    },
+    "container": {
+      "maxWidthPx": 1200,
+      "paddingPx": { "xs": 16, "sm": 20, "md": 24, "lg": 32 }
+    }
+  },
+
+  "tokens": {
+    "colors": {
+      "primary": "#F2811D",
+      "secondary": "#F2C849",
+      "softBg1": "#F2D4C2",
+      "softBg2": "#F2D888",
+      "textDark": "#592512",
+      "white": "#FFFFFF",
+      "gray50": "#FAFAFA",
+      "gray100": "#F5F5F5",
+      "gray200": "#EEEEEE",
+      "gray500": "#6B7280",
+      "overlayWaveOnDark": "rgba(255,255,255,0.06)"
+    },
+    "typography": {
+      "fontFamily": "Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
+      "scale": {
+        "h1": { "xs": 34, "md": 52, "weight": 700, "lineHeight": 1.05 },
+        "h2": { "xs": 24, "md": 34, "weight": 700, "lineHeight": 1.15 },
+        "h3": { "xs": 18, "md": 22, "weight": 650, "lineHeight": 1.2 },
+        "body": { "xs": 15, "md": 17, "weight": 400, "lineHeight": 1.6 },
+        "small": { "xs": 13, "md": 14, "weight": 400, "lineHeight": 1.5 }
+      }
+    },
+    "radius": {
+      "sm": 10,
+      "md": 16,
+      "lg": 24,
+      "pill": 999
+    },
+    "shadow": {
+      "sm": "0 6px 16px rgba(0,0,0,0.08)",
+      "md": "0 10px 26px rgba(0,0,0,0.10)"
+    },
+    "spacing": {
+      "sectionY": { "xs": 56, "md": 96 },
+      "blockGap": { "xs": 16, "md": 24 },
+      "gridGap": { "xs": 14, "md": 20 }
+    },
+    "motion": {
+      "durationMs": { "fast": 150, "normal": 200 },
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "hoverLiftPx": 4
+    }
+  },
+
+  "angular": {
+    "recommended_stack": {
+      "styling": "SCSS + CSS variables (tokens) or Tailwind (optional)",
+      "components": "Standalone components",
+      "forms": "ReactiveFormsModule",
+      "routing": "Angular Router",
+      "images": "NgOptimizedImage",
+      "accessibility": "CDK a11y + semantic HTML"
+    },
+    "project_structure_hint": {
+      "routes": [
+        { "path": "", "component": "HomePageComponent" },
+        { "path": "a-propos", "component": "AboutPageComponent" },
+        { "path": "services", "component": "ServicesPageComponent" },
+        { "path": "etudes-de-cas", "component": "CaseStudiesPageComponent" },
+        { "path": "equipe", "component": "TeamPageComponent" },
+        { "path": "contact", "component": "ContactPageComponent" }
+      ],
+      "shared_components": [
+        "SiteHeaderComponent",
+        "SiteFooterComponent",
+        "HeroSectionComponent",
+        "SectionTitleComponent",
+        "CardComponent",
+        "ButtonComponent",
+        "BadgeComponent",
+        "LogoMarqueeComponent",
+        "KpiStripComponent",
+        "StepsComponent",
+        "TestimonialCarouselComponent",
+        "ContactSplitComponent"
+      ]
+    }
+  },
+
+  "assets": {
+    "images_policy": {
+      "style": "real-life business consulting (people at work), warm, modern",
+      "treatment": "rounded corners, subtle overlay when on dark backgrounds",
+      "fallback": "use placeholders if not provided"
+    },
+    "icons_policy": {
+      "style": "outline/flat, consistent stroke width",
+      "preferred_sets": ["Heroicons", "Lucide", "Material Symbols Outlined"]
+    },
+    "decor_policy": {
+      "allowed": true,
+      "types": ["small dots", "mini rectangles", "thin lines", "soft wave pattern on dark"],
+      "opacity_range": [0.04, 0.12]
+    }
+  },
+
+  "content": {
+    "siteName": "SEC-CONSULTING",
+    "nav": [
+      { "label": "Accueil", "route": "/" },
+      { "label": "À propos", "route": "/a-propos" },
+      { "label": "Services", "route": "/services" },
+      { "label": "Études de cas", "route": "/etudes-de-cas" },
+      { "label": "Équipe", "route": "/equipe" },
+      { "label": "Contact", "route": "/contact" }
+    ],
+    "primaryCTA": { "label": "Demander un diagnostic", "route": "/contact" },
+    "secondaryCTA": { "label": "Voir nos services", "route": "/services" },
+
+    "home": {
+      "hero": {
+        "eyebrow": "Cabinet d'expertise & conseil",
+        "title": "SEC-CONSULTING — Expertise comptable, audit, conseil, digitalisation et formation",
+        "subtitle": "Nous aidons les organisations à sécuriser leurs opérations, structurer leurs décisions et accélérer leur croissance grâce à une expertise rigoureuse et un accompagnement pragmatique.",
+        "badges": ["Rigueur & conformité", "Décisions pilotées par les chiffres", "Accompagnement opérationnel"],
+        "ctaPrimary": { "label": "Demander un diagnostic", "route": "/contact" },
+        "ctaSecondary": { "label": "Voir nos services", "route": "/services" },
+        "media": {
+          "type": "image",
+          "alt": "Consultants en réunion",
+          "src": "assets/img/hero-consulting.jpg"
+        },
+        "background": { "type": "softGradient", "from": "softBg1", "to": "softBg2" }
+      },
+
+      "partners": {
+        "title": "Ils nous font confiance",
+        "mode": "marquee",
+        "logos": [
+          { "name": "Partenaire 1", "src": "assets/logos/p1.svg" },
+          { "name": "Partenaire 2", "src": "assets/logos/p2.svg" },
+          { "name": "Partenaire 3", "src": "assets/logos/p3.svg" },
+          { "name": "Partenaire 4", "src": "assets/logos/p4.svg" }
+        ]
+      },
+
+      "whyUs": {
+        "title": "Un partenaire stratégique, au-delà de la comptabilité",
+        "items": [
+          {
+            "icon": "shield-check",
+            "title": "Sécuriser",
+            "text": "Réduire les risques, renforcer la conformité et fiabiliser les opérations financières."
+          },
+          {
+            "icon": "layers",
+            "title": "Structurer",
+            "text": "Mettre en place des process, une gouvernance et des outils de pilotage clairs."
+          },
+          {
+            "icon": "trending-up",
+            "title": "Développer",
+            "text": "Optimiser la performance et accompagner la croissance avec des décisions data-driven."
+          }
+        ]
+      },
+
+      "servicesPreview": {
+        "title": "Nos services",
+        "subtitle": "Une offre complète pour sécuriser, optimiser et développer votre organisation.",
+        "layout": { "desktopCols": 3, "tabletCols": 2, "mobileCols": 1 },
+        "cards": [
+          {
+            "tag": "Audit",
+            "title": "Audit & commissariat",
+            "text": "Contrôle, fiabilisation, conformité et recommandations actionnables.",
+            "media": { "type": "image", "src": "assets/img/service-audit.jpg", "alt": "Audit" },
+            "cta": { "label": "Découvrir", "route": "/services#audit" }
+          },
+          {
+            "tag": "Comptabilité",
+            "title": "Expertise comptable",
+            "text": "Tenue, révision, clôture et accompagnement comptable et financier.",
+            "media": { "type": "image", "src": "assets/img/service-accounting.jpg", "alt": "Comptabilité" },
+            "cta": { "label": "Découvrir", "route": "/services#comptabilite" }
+          },
+          {
+            "tag": "Fiscalité",
+            "title": "Conseil fiscal",
+            "text": "Optimisation fiscale, déclarations, conformité et sécurisation.",
+            "media": { "type": "image", "src": "assets/img/service-tax.jpg", "alt": "Fiscalité" },
+            "cta": { "label": "Découvrir", "route": "/services#fiscalite" }
+          },
+          {
+            "tag": "Conseil",
+            "title": "Conseil & stratégie",
+            "text": "Pilotage, organisation, performance, business plan et reporting.",
+            "media": { "type": "image", "src": "assets/img/service-strategy.jpg", "alt": "Conseil" },
+            "cta": { "label": "Découvrir", "route": "/services#strategie" }
+          },
+          {
+            "tag": "Digital",
+            "title": "Digitalisation",
+            "text": "Automatisation, outils, tableaux de bord, modernisation des process.",
+            "media": { "type": "image", "src": "assets/img/service-digital.jpg", "alt": "Digitalisation" },
+            "cta": { "label": "Découvrir", "route": "/services#digital" }
+          },
+          {
+            "tag": "Formation",
+            "title": "Formation",
+            "text": "Programmes pratiques pour équipes finance, admin, management.",
+            "media": { "type": "image", "src": "assets/img/service-training.jpg", "alt": "Formation" },
+            "cta": { "label": "Découvrir", "route": "/services#formation" }
+          }
+        ],
+        "ctaRow": [
+          { "label": "Télécharger la brochure", "action": "download", "href": "assets/docs/brochure.pdf" },
+          { "label": "Parler à un consultant", "route": "/contact" }
+        ],
+        "background": { "type": "solid", "color": "softBg2" }
+      },
+
+      "method": {
+        "title": "Notre méthode",
+        "subtitle": "Une approche simple, mesurable et orientée résultats.",
+        "steps": [
+          { "number": 1, "title": "Diagnostic", "text": "Analyse rapide du besoin, contexte, contraintes et objectifs." },
+          { "number": 2, "title": "Plan d’action", "text": "Proposition claire : livrables, timeline, responsabilités, KPIs." },
+          { "number": 3, "title": "Exécution", "text": "Mise en œuvre accompagnée, coordination, itérations." },
+          { "number": 4, "title": "Suivi & amélioration", "text": "Mesure de l’impact, reporting, ajustements continus." }
+        ]
+      },
+
+      "proof": {
+        "title": "Des résultats concrets, une relation durable",
+        "text": "Nous privilégions la clarté, la conformité et l’impact mesurable dans la durée.",
+        "kpis": [
+          { "value": "95%", "label": "Satisfaction client" },
+          { "value": "2×", "label": "Amélioration (moy.)" },
+          { "value": "8+", "label": "Années d’expérience" }
+        ],
+        "media": { "type": "image", "src": "assets/img/proof.jpg", "alt": "Travail d'équipe" },
+        "cta": { "label": "Voir nos références", "route": "/etudes-de-cas" }
+      },
+
+      "finalCta": {
+        "title": "Prêt à clarifier vos chiffres et vos décisions ?",
+        "text": "Obtenez un diagnostic initial et une feuille de route adaptée à votre organisation.",
+        "cta": { "label": "Demander un diagnostic", "route": "/contact" },
+        "background": { "type": "solid", "color": "primary" },
+        "textColor": "white"
+      }
+    },
+
+    "about": {
+      "hero": {
+        "title": "À propos de SEC-CONSULTING",
+        "subtitle": "Un cabinet orienté impact, rigueur et accompagnement pragmatique.",
+        "background": { "type": "softGradient", "from": "softBg1", "to": "white" }
+      },
+      "intro": {
+        "layout": "split",
+        "media": { "type": "image", "src": "assets/img/about-team.jpg", "alt": "Équipe" },
+        "textBlocks": [
+          {
+            "title": "Qui sommes-nous ?",
+            "text": "SEC-CONSULTING accompagne entreprises, ONG et institutions sur les sujets comptables, fiscaux, d’audit, de pilotage et de transformation digitale."
+          }
+        ]
+      },
+      "missionVision": {
+        "cards": [
+          { "title": "Mission", "text": "Sécuriser, structurer et accélérer la performance de nos clients." },
+          { "title": "Vision", "text": "Faire des données financières un levier de décision accessible et actionnable." }
+        ]
+      },
+      "values": {
+        "title": "Nos valeurs",
+        "items": [
+          { "icon": "scale", "title": "Intégrité", "text": "Éthique, confidentialité et conformité." },
+          { "icon": "target", "title": "Exigence", "text": "Rigueur, qualité et livrables clairs." },
+          { "icon": "handshake", "title": "Proximité", "text": "Accompagnement humain et disponibilité." },
+          { "icon": "sparkles", "title": "Innovation", "text": "Digitalisation et amélioration continue." }
+        ]
+      }
+    },
+
+    "services": {
+      "hero": {
+        "title": "Nos services",
+        "subtitle": "Une offre complète, modulable, alignée sur vos enjeux.",
+        "cta": { "label": "Demander une proposition", "route": "/contact" },
+        "background": { "type": "solid", "color": "softBg2" }
+      },
+      "sections": [
+        {
+          "id": "audit",
+          "title": "Audit & commissariat",
+          "bullets": ["Audit légal et contractuel", "Contrôle interne", "Recommandations et plan de remédiation"],
+          "cta": { "label": "Demander une mission d’audit", "route": "/contact" }
+        },
+        {
+          "id": "comptabilite",
+          "title": "Expertise comptable",
+          "bullets": ["Tenue & révision", "Clôture", "Reporting périodique"],
+          "cta": { "label": "Parler à un expert", "route": "/contact" }
+        },
+        {
+          "id": "fiscalite",
+          "title": "Conseil fiscal",
+          "bullets": ["Optimisation & conformité", "Déclarations", "Sécurisation et veille"],
+          "cta": { "label": "Demander un accompagnement fiscal", "route": "/contact" }
+        },
+        {
+          "id": "strategie",
+          "title": "Conseil & stratégie",
+          "bullets": ["Pilotage & performance", "Business plan", "Tableaux de bord"],
+          "cta": { "label": "Obtenir une feuille de route", "route": "/contact" }
+        },
+        {
+          "id": "digital",
+          "title": "Digitalisation",
+          "bullets": ["Automatisation de process", "Outils & intégrations", "Dashboards KPI"],
+          "cta": { "label": "Lancer un projet digital", "route": "/contact" }
+        },
+        {
+          "id": "formation",
+          "title": "Formation",
+          "bullets": ["Finance & comptabilité", "Gestion & contrôle", "Outils et reporting"],
+          "cta": { "label": "Planifier une formation", "route": "/contact" }
+        }
+      ]
+    },
+
+    "caseStudies": {
+      "hero": {
+        "title": "Études de cas",
+        "subtitle": "Quelques missions représentatives et résultats obtenus.",
+        "background": { "type": "solid", "color": "white" }
+      },
+      "filters": ["Tous", "Audit", "Comptabilité", "Fiscalité", "Digitalisation", "Formation"],
+      "cards": [
+        {
+          "client": "Client A",
+          "industry": "Industrie",
+          "challenge": "Fiabiliser la clôture et réduire les écarts.",
+          "serviceUsed": "Expertise comptable",
+          "result": "Cycle de clôture réduit, reporting stabilisé.",
+          "media": { "type": "image", "src": "assets/img/case-1.jpg", "alt": "Étude de cas 1" }
+        },
+        {
+          "client": "Client B",
+          "industry": "Services",
+          "challenge": "Renforcer le contrôle interne.",
+          "serviceUsed": "Audit",
+          "result": "Plan d’action et conformité améliorée.",
+          "media": { "type": "image", "src": "assets/img/case-2.jpg", "alt": "Étude de cas 2" }
+        },
+        {
+          "client": "Client C",
+          "industry": "ONG",
+          "challenge": "Automatiser les rapports KPI.",
+          "serviceUsed": "Digitalisation",
+          "result": "Dashboards et gain de temps opérationnel.",
+          "media": { "type": "image", "src": "assets/img/case-3.jpg", "alt": "Étude de cas 3" }
+        }
+      ],
+      "highlightBand": {
+        "background": { "type": "solid", "color": "primary" },
+        "textColor": "white",
+        "title": "Notre histoire commence par des solutions concrètes",
+        "text": "Chaque mission est cadrée, pilotée et mesurée pour livrer de la valeur rapidement."
+      }
+    },
+
+    "team": {
+      "hero": {
+        "title": "Notre équipe",
+        "subtitle": "Des profils complémentaires, orientés impact.",
+        "background": { "type": "softGradient", "from": "white", "to": "softBg1" }
+      },
+      "members": [
+        {
+          "name": "Nom Prénom",
+          "role": "Consultant Finance",
+          "bio": "Pilotage, audit, structuration financière.",
+          "photo": "assets/img/team-1.jpg",
+          "social": { "linkedin": "#", "facebook": "#", "instagram": "#" }
+        },
+        {
+          "name": "Nom Prénom",
+          "role": "Consultant Fiscalité",
+          "bio": "Conformité, optimisation, accompagnement.",
+          "photo": "assets/img/team-2.jpg",
+          "social": { "linkedin": "#", "facebook": "#", "instagram": "#" }
+        },
+        {
+          "name": "Nom Prénom",
+          "role": "Consultant Digital",
+          "bio": "Outils, automatisation, dashboards KPI.",
+          "photo": "assets/img/team-3.jpg",
+          "social": { "linkedin": "#", "facebook": "#", "instagram": "#" }
+        }
+      ],
+      "cta": { "label": "Prendre rendez-vous", "route": "/contact" }
+    },
+
+    "testimonials": {
+      "sectionStyle": {
+        "background": { "type": "dark", "color": "textDark", "pattern": "waveLines" },
+        "textColor": "white"
+      },
+      "title": "Ils parlent de nous",
+      "items": [
+        {
+          "rating": 5,
+          "quote": "Une équipe rigoureuse, réactive, avec des livrables clairs.",
+          "name": "Client 1",
+          "role": "DG",
+          "company": "Entreprise",
+          "avatar": "assets/img/avatar-1.jpg"
+        },
+        {
+          "rating": 5,
+          "quote": "Le diagnostic a été précis et le plan d’action immédiatement exploitable.",
+          "name": "Client 2",
+          "role": "DAF",
+          "company": "Organisation",
+          "avatar": "assets/img/avatar-2.jpg"
+        },
+        {
+          "rating": 5,
+          "quote": "Nos reportings sont enfin structurés, avec des KPI utiles au pilotage.",
+          "name": "Client 3",
+          "role": "COO",
+          "company": "Structure",
+          "avatar": "assets/img/avatar-3.jpg"
+        }
+      ]
+    },
+
+    "contact": {
+      "hero": {
+        "title": "Contact",
+        "subtitle": "Expliquez votre besoin — nous revenons vers vous rapidement.",
+        "background": { "type": "solid", "color": "gray50" }
+      },
+      "split": {
+        "left": {
+          "title": "Envoyez-nous un message",
+          "helper": "Réponse sous 30 minutes pendant les heures ouvrables (à ajuster).",
+          "fields": [
+            { "name": "firstName", "label": "Prénom", "type": "text", "required": true, "grid": { "md": 6 } },
+            { "name": "lastName", "label": "Nom", "type": "text", "required": true, "grid": { "md": 6 } },
+            { "name": "phone", "label": "Téléphone", "type": "tel", "required": true, "grid": { "md": 6 } },
+            { "name": "email", "label": "Email", "type": "email", "required": true, "grid": { "md": 6 } },
+            {
+              "name": "service",
+              "label": "Service",
+              "type": "select",
+              "required": true,
+              "grid": { "md": 12 },
+              "options": ["Audit", "Expertise comptable", "Fiscalité", "Conseil & stratégie", "Digitalisation", "Formation"]
+            },
+            { "name": "message", "label": "Message", "type": "textarea", "required": true, "rows": 5, "grid": { "md": 12 } }
+          ],
+          "submit": { "label": "Envoyer", "variant": "primary", "icon": "arrow-right" }
+        },
+        "right": {
+          "cards": [
+            {
+              "icon": "map-pin",
+              "title": "Adresse",
+              "text": "N'Djamena, Tchad (à préciser)",
+              "accentColor": "primary"
+            },
+            {
+              "icon": "phone",
+              "title": "Téléphone",
+              "text": "+235 XX XX XX XX (à préciser)",
+              "accentColor": "primary"
+            },
+            {
+              "icon": "mail",
+              "title": "Email",
+              "text": "contact@sec-consulting.org (à préciser)",
+              "accentColor": "primary"
+            }
+          ]
+        }
+      }
+    }
+  },
+
+  "ui_composition": {
+    "appShell": {
+      "header": {
+        "type": "SiteHeader",
+        "props": {
+          "nav": "@content.nav",
+          "logoText": "@content.siteName",
+          "cta": "@content.primaryCTA",
+          "style": {
+            "background": "white",
+            "sticky": true,
+            "borderBottom": "1px solid rgba(0,0,0,0.06)"
+          },
+          "mobile": { "menu": "drawer", "ctaPlacement": "bottom" }
+        }
+      },
+      "footer": {
+        "type": "SiteFooter",
+        "props": {
+          "background": "textDark",
+          "textColor": "white",
+          "columns": [
+            {
+              "title": "SEC-CONSULTING",
+              "text": "Cabinet d’audit, expertise comptable, conseil, digitalisation et formation."
+            },
+            {
+              "title": "Liens",
+              "links": [
+                { "label": "À propos", "route": "/a-propos" },
+                { "label": "Services", "route": "/services" },
+                { "label": "Études de cas", "route": "/etudes-de-cas" },
+                { "label": "Contact", "route": "/contact" }
+              ]
+            },
+            {
+              "title": "Services",
+              "links": [
+                { "label": "Audit", "route": "/services#audit" },
+                { "label": "Expertise comptable", "route": "/services#comptabilite" },
+                { "label": "Fiscalité", "route": "/services#fiscalite" },
+                { "label": "Digitalisation", "route": "/services#digital" }
+              ]
+            }
+          ],
+          "social": [
+            { "name": "Facebook", "href": "#" },
+            { "name": "LinkedIn", "href": "#" }
+          ]
+        }
+      }
+    },
+
+    "pages": [
+      {
+        "route": "/",
+        "name": "Home",
+        "sections": [
+          { "type": "HeroSection", "propsRef": "@content.home.hero" },
+          { "type": "LogoMarquee", "propsRef": "@content.home.partners" },
+          { "type": "FeatureCards", "propsRef": "@content.home.whyUs" },
+          { "type": "ServiceCards", "propsRef": "@content.home.servicesPreview" },
+          { "type": "Steps", "propsRef": "@content.home.method" },
+          { "type": "KpiSplit", "propsRef": "@content.home.proof" },
+          { "type": "TestimonialCarousel", "propsRef": "@content.testimonials" },
+          { "type": "FinalCtaBand", "propsRef": "@content.home.finalCta" }
+        ]
+      },
+      {
+        "route": "/a-propos",
+        "name": "About",
+        "sections": [
+          { "type": "PageHero", "propsRef": "@content.about.hero" },
+          { "type": "SplitIntro", "propsRef": "@content.about.intro" },
+          { "type": "TwoCardBand", "propsRef": "@content.about.missionVision" },
+          { "type": "IconGrid", "propsRef": "@content.about.values" },
+          { "type": "FinalCtaBand", "propsRef": "@content.home.finalCta" }
+        ]
+      },
+      {
+        "route": "/services",
+        "name": "Services",
+        "sections": [
+          { "type": "PageHero", "propsRef": "@content.services.hero" },
+          { "type": "ServiceSections", "propsRef": "@content.services.sections" },
+          { "type": "TestimonialCarousel", "propsRef": "@content.testimonials" },
+          { "type": "FinalCtaBand", "propsRef": "@content.home.finalCta" }
+        ]
+      },
+      {
+        "route": "/etudes-de-cas",
+        "name": "CaseStudies",
+        "sections": [
+          { "type": "PageHero", "propsRef": "@content.caseStudies.hero" },
+          { "type": "FilterableCaseGrid", "propsRef": "@content.caseStudies" },
+          { "type": "HighlightBand", "propsRef": "@content.caseStudies.highlightBand" },
+          { "type": "FinalCtaBand", "propsRef": "@content.home.finalCta" }
+        ]
+      },
+      {
+        "route": "/equipe",
+        "name": "Team",
+        "sections": [
+          { "type": "PageHero", "propsRef": "@content.team.hero" },
+          { "type": "TeamGrid", "propsRef": "@content.team" },
+          { "type": "FinalCtaBand", "propsRef": "@content.home.finalCta" }
+        ]
+      },
+      {
+        "route": "/contact",
+        "name": "Contact",
+        "sections": [
+          { "type": "PageHero", "propsRef": "@content.contact.hero" },
+          { "type": "ContactSplit", "propsRef": "@content.contact.split" }
+        ]
+      }
+    ]
+  },
+
+  "component_contracts": {
+    "CardComponent": {
+      "props": {
+        "media": { "type": "image|none", "src": "string", "alt": "string" },
+        "tag": "string?",
+        "title": "string",
+        "text": "string",
+        "cta": { "label": "string", "route": "string" }
+      },
+      "style": {
+        "radius": "lg",
+        "shadow": "sm",
+        "hover": { "liftPx": "@tokens.motion.hoverLiftPx", "shadow": "md" }
+      }
+    },
+    "ButtonComponent": {
+      "props": {
+        "variant": "primary|secondary|ghost",
+        "label": "string",
+        "icon": "string?",
+        "route": "string?"
+      },
+      "a11y": { "focusRing": true, "minHeightPx": 44 }
+    },
+    "TestimonialCarouselComponent": {
+      "props": {
+        "title": "string",
+        "items": "Array<Testimonial>",
+        "visibleCards": { "xs": 1, "md": 3 }
+      },
+      "ui": {
+        "navArrows": "round",
+        "stars": true,
+        "cardStyle": { "radius": "md", "shadow": "sm" }
+      }
+    },
+    "ContactSplitComponent": {
+      "props": {
+        "left": "ContactFormSpec",
+        "right": "Array<InfoCard>"
+      },
+      "layout": { "xs": "stack", "md": "2-col" }
+    }
+  },
+
+  "implementation_notes_for_agent": {
+    "css_vars": {
+      "hint": "Expose tokens as CSS variables in :root and map component styles to them.",
+      "must_have_vars": [
+        "--c-primary",
+        "--c-secondary",
+        "--c-soft-1",
+        "--c-soft-2",
+        "--c-text",
+        "--radius-md",
+        "--radius-lg",
+        "--shadow-sm"
+      ]
+    },
+    "images": {
+      "hint": "Use NgOptimizedImage for performance; maintain aspect ratio; add rounded corners."
+    },
+    "forms": {
+      "hint": "Reactive form; show validation; labels visible; button full-width on mobile."
+    },
+    "accessibility": {
+      "hint": "Use semantic headings order, aria-label on icon buttons, and keyboard navigation for carousels."
+    }
+  }
+}

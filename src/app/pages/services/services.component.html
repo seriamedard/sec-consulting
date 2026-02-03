@@ -1,0 +1,84 @@
+<!-- Hero Section -->
+<app-page-hero
+  title="Nos services"
+  subtitle="Une offre complète, modulable, alignée sur vos enjeux."
+  ctaLabel="Demander une proposition"
+  ctaRoute="/contact"
+  background="soft2">
+</app-page-hero>
+
+<!-- Services Sections -->
+@for (service of services; track service.id; let i = $index; let isEven = $even) {
+  <section 
+    [id]="service.id"
+    class="section"
+    [class.bg-white]="isEven"
+    [class.bg-gray-50]="!isEven">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Text Content -->
+        <div [class.md:order-1]="isEven" [class.md:order-2]="!isEven">
+          <span class="text-primary font-semibold text-sm uppercase tracking-wider mb-2 block">
+            Service {{ i + 1 }}/{{ services.length }}
+          </span>
+          <h2 class="heading-2 mb-4">{{ service.title }}</h2>
+          <p class="body-text text-gray-600 mb-6">{{ service.description }}</p>
+          
+          <ul class="space-y-3 mb-8">
+            @for (bullet of service.bullets; track bullet) {
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-600">{{ bullet }}</span>
+              </li>
+            }
+          </ul>
+
+          <app-button 
+            route="/contact" 
+            variant="primary"
+            icon="arrow-right">
+            {{ service.ctaLabel }}
+          </app-button>
+        </div>
+
+        <!-- Image -->
+        <div [class.md:order-2]="isEven" [class.md:order-1]="!isEven">
+          <div class="relative">
+            <img 
+              [src]="service.imageSrc" 
+              [alt]="service.title"
+              class="w-full rounded-lg shadow-md object-cover aspect-[4/3]"
+              loading="lazy">
+            <div 
+              class="absolute -z-10 w-32 h-32 rounded-lg"
+              [class.-bottom-4]="isEven"
+              [class.-right-4]="isEven"
+              [class.-top-4]="!isEven"
+              [class.-left-4]="!isEven"
+              [class.bg-primary]="isEven"
+              [class.bg-secondary]="!isEven"
+              [class.opacity-20]="true">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+
+<!-- Testimonials -->
+<app-testimonial-carousel
+  title="Ce que disent nos clients"
+  [items]="testimonials">
+</app-testimonial-carousel>
+
+<!-- Final CTA -->
+<app-cta-band
+  title="Vous avez un besoin spécifique ?"
+  text="Expliquez-nous votre contexte. Nous vous proposons une orientation claire et une première feuille de route."
+  ctaLabel="Demander un devis"
+  ctaRoute="/contact"
+  variant="primary">
+</app-cta-band>

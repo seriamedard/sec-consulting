@@ -1,0 +1,83 @@
+<header 
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  [class.bg-white]="isScrolled()"
+  [class.shadow-sm]="isScrolled()"
+  [class.bg-transparent]="!isScrolled()">
+  <div class="container-custom">
+    <nav class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a routerLink="/" class="flex items-center gap-2 text-text-dark hover:text-text-dark">
+        <span class="text-2xl font-bold">SEC</span>
+        <span class="text-2xl font-bold text-primary">CONSULTING</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        @for (item of navItems; track item.route) {
+          <a 
+            [routerLink]="item.route" 
+            routerLinkActive="text-primary font-semibold"
+            [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+            class="text-text-dark hover:text-primary transition-colors duration-fast font-medium">
+            {{ item.label }}
+          </a>
+        }
+      </div>
+
+      <!-- CTA Button (Desktop) -->
+      <a 
+        routerLink="/contact" 
+        class="hidden md:inline-flex btn-primary">
+        Demander un diagnostic
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        class="md:hidden p-2 text-text-dark"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-label="Toggle menu">
+        @if (!isMenuOpen()) {
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        } @else {
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        }
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  @if (isMenuOpen()) {
+    <div 
+      class="fixed inset-0 top-20 bg-white z-40 md:hidden animate-fadeIn"
+      (click)="closeMenu()">
+      <div class="container-custom py-8">
+        <div class="flex flex-col gap-4">
+          @for (item of navItems; track item.route) {
+            <a 
+              [routerLink]="item.route"
+              routerLinkActive="text-primary font-semibold"
+              [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+              (click)="closeMenu()"
+              class="text-lg text-text-dark hover:text-primary transition-colors py-3 border-b border-gray-100">
+              {{ item.label }}
+            </a>
+          }
+          <a 
+            routerLink="/contact"
+            (click)="closeMenu()"
+            class="btn-primary mt-4 text-center">
+            Demander un diagnostic
+          </a>
+        </div>
+      </div>
+    </div>
+  }
+</header>
+
+<!-- Spacer to prevent content from going under fixed header -->
+<div class="h-20"></div>

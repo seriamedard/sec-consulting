@@ -1,0 +1,131 @@
+<!-- Hero Section -->
+<app-hero-section
+  [eyebrow]="hero.eyebrow"
+  [title]="hero.title"
+  [subtitle]="hero.subtitle"
+  [badges]="hero.badges"
+  [primaryCta]="hero.primaryCta"
+  [secondaryCta]="hero.secondaryCta"
+  [imageSrc]="hero.imageSrc"
+  [imageAlt]="hero.imageAlt"
+  background="gradient">
+</app-hero-section>
+
+<!-- Partners Marquee -->
+<app-logo-marquee
+  [title]="partners.title"
+  [logos]="partners.logos">
+</app-logo-marquee>
+
+<!-- Why Us Section -->
+<section class="section bg-white">
+  <div class="container-custom">
+    <app-section-title
+      title="Un partenaire stratégique, au-delà de la comptabilité"
+      subtitle="Fondé en 2012 et restructuré pour répondre aux exigences actuelles des organisations, SEC-CONSULTING combine rigueur méthodologique, connaissance du terrain et approche orientée résultats.">
+    </app-section-title>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      @for (feature of whyUsFeatures; track feature.title) {
+        <app-feature-card
+          [icon]="feature.icon"
+          [title]="feature.title"
+          [text]="feature.text">
+        </app-feature-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Services Preview Section -->
+<section class="section bg-soft-bg-2">
+  <div class="container-custom">
+    <app-section-title
+      title="Nos services"
+      subtitle="Une offre complète pour sécuriser, optimiser et développer votre organisation.">
+    </app-section-title>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+      @for (service of services; track service.title) {
+        <app-card
+          [imageSrc]="service.imageSrc"
+          [tag]="service.tag"
+          [title]="service.title"
+          [text]="service.text"
+          [ctaLabel]="service.ctaLabel"
+          [ctaRoute]="service.ctaRoute">
+        </app-card>
+      }
+    </div>
+
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-12">
+      <app-button 
+        href="assets/docs/brochure.pdf" 
+        variant="ghost"
+        target="_blank">
+        Télécharger la brochure
+      </app-button>
+      <app-button 
+        route="/contact" 
+        variant="primary"
+        icon="arrow-right">
+        Parler à un consultant
+      </app-button>
+    </div>
+  </div>
+</section>
+
+<!-- Method / Process Section -->
+<app-steps
+  title="Notre méthode"
+  subtitle="Une approche simple, mesurable et orientée résultats."
+  [steps]="methodSteps">
+</app-steps>
+
+<!-- Proof / KPI Section -->
+<section class="section bg-soft-bg-1">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <app-section-title
+          [centered]="false"
+          title="Des résultats concrets, une relation durable"
+          subtitle="Nous privilégions la clarté, la conformité et l'impact mesurable dans la durée.">
+        </app-section-title>
+        
+        <div class="mt-8">
+          <app-kpi-strip [kpis]="kpis"></app-kpi-strip>
+        </div>
+
+        <div class="mt-8">
+          <app-button route="/etudes-de-cas" variant="primary" icon="arrow-right">
+            Voir nos références
+          </app-button>
+        </div>
+      </div>
+      <div class="relative">
+        <img 
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" 
+          alt="Travail d'équipe"
+          class="w-full rounded-lg shadow-md"
+          loading="lazy">
+        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/30 rounded-lg -z-10"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<app-testimonial-carousel
+  title="Ils parlent de nous"
+  [items]="testimonials">
+</app-testimonial-carousel>
+
+<!-- Final CTA -->
+<app-cta-band
+  title="Prêt à clarifier vos chiffres et vos décisions ?"
+  text="Obtenez un diagnostic initial et une feuille de route adaptée à votre organisation."
+  ctaLabel="Demander un diagnostic"
+  ctaRoute="/contact"
+  variant="primary">
+</app-cta-band>

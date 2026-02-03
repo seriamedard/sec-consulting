@@ -1,0 +1,102 @@
+<!-- Hero Section -->
+<app-page-hero
+  title="À propos de SEC-CONSULTING"
+  subtitle="Un cabinet orienté impact, rigueur et accompagnement pragmatique."
+  background="gradient">
+</app-page-hero>
+
+<!-- Introduction Section -->
+<section class="section bg-white">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="heading-2 mb-6">Qui sommes-nous ?</h2>
+        <p class="body-text text-gray-600 mb-4">
+          <strong>SEC-CONSULTING</strong> est un cabinet d'expertise comptable fondé en 2012 par des professionnels de la finance. 
+          Après une décennie d'activité, une restructuration stratégique a permis de bâtir une organisation moderne, 
+          agile et adaptée aux exigences actuelles du conseil, de l'audit et de la formation.
+        </p>
+        <p class="body-text text-gray-600">
+          Nous accompagnons entreprises, ONG et institutions sur les sujets comptables, fiscaux, 
+          d'audit, de pilotage et de transformation digitale. Notre objectif : sécuriser votre entreprise, 
+          structurer vos processus et accélérer votre croissance durable.
+        </p>
+      </div>
+      <div class="relative">
+        <img 
+          src="https://images.unsplash.com/photo-1552581234-26160f608093?w=800&q=80" 
+          alt="L'équipe SEC-CONSULTING"
+          class="w-full rounded-lg shadow-md"
+          loading="lazy">
+        <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-primary/20 rounded-lg -z-10"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission / Vision Section -->
+<section class="section bg-soft-bg-1">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Mission Card -->
+      <div class="bg-white rounded-lg p-8 shadow-sm">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3 class="heading-3 mb-4">Notre Mission</h3>
+        <p class="body-text text-gray-600">
+          Sécuriser la gestion comptable, fiscale et sociale, tout en améliorant la performance 
+          et la gouvernance des organisations. Nous nous engageons à fournir des solutions 
+          concrètes et actionnables qui créent de la valeur pour nos clients.
+        </p>
+      </div>
+
+      <!-- Vision Card -->
+      <div class="bg-white rounded-lg p-8 shadow-sm">
+        <div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+          </svg>
+        </div>
+        <h3 class="heading-3 mb-4">Notre Vision</h3>
+        <p class="body-text text-gray-600">
+          Faire de la donnée financière et organisationnelle un levier de décision, 
+          de structuration et de croissance durable. Nous croyons que chaque organisation 
+          peut atteindre l'excellence grâce à une gestion rigoureuse et des outils adaptés.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values Section -->
+<section class="section bg-white">
+  <div class="container-custom">
+    <app-section-title
+      title="Nos valeurs"
+      subtitle="Les principes qui guident notre action au quotidien.">
+    </app-section-title>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+      @for (value of values; track value.title) {
+        <app-feature-card
+          [icon]="value.icon"
+          [title]="value.title"
+          [text]="value.text">
+        </app-feature-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<app-cta-band
+  title="Prêt à travailler avec nous ?"
+  text="Découvrez comment SEC-CONSULTING peut accompagner votre organisation vers l'excellence."
+  ctaLabel="Demander un diagnostic"
+  ctaRoute="/contact"
+  variant="primary">
+</app-cta-band>
