@@ -1,6 +1,6 @@
 import { defineBackend } from '@aws-amplify/backend';
 import { PolicyStatement, Effect } from 'aws-cdk-lib/aws-iam';
-import { FunctionUrlAuthType } from 'aws-cdk-lib/aws-lambda';
+import { FunctionUrlAuthType, HttpMethod } from 'aws-cdk-lib/aws-lambda';
 import { auth } from './auth/resource';
 import { data } from './data/resource';
 import { sendEmail } from './functions/send-email/resource';
@@ -31,7 +31,7 @@ const functionUrl = sendEmailLambda.addFunctionUrl({
   authType: FunctionUrlAuthType.NONE,
   cors: {
     allowedOrigins: ['*'],
-    allowedMethods: [{ name: 'POST' }, { name: 'OPTIONS' }],
+    allowedMethods: [HttpMethod.POST],
     allowedHeaders: ['Content-Type'],
   },
 });
