@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, from, catchError, map, switchMap } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, from, catchError, map, switchMap, throwError } from 'rxjs';
 
-interface ContactFormData {
+export interface ContactFormData {
   firstName: string;
   lastName: string;
   email: string;
@@ -11,7 +11,7 @@ interface ContactFormData {
   message: string;
 }
 
-interface EmailResponse {
+export interface EmailResponse {
   success: boolean;
   message: string;
   error?: string;
@@ -21,60 +21,60 @@ interface EmailResponse {
   providedIn: 'root'
 })
 export class EmailService {
-  private http = inject(HttpClient);
+  private readonly http = inject(HttpClient);
   private functionUrl: string | null = null;
 
   constructor() {
     this.loadFunctionUrl();
   }
 
+  /**
+   * Load the Lambda function URL from Amplify outputs
+   */
   private async loadFunctionUrl(): Promise<void> {
     try {
-      // Try to load from amplify_outputs.json
       const response = await fetch('/amplify_outputs.json');
       if (response.ok) {
         const outputs = await response.json();
-        if (outputs.custom?.sendEmailFunctionUrl) {
-          this.functionUrl = outputs.custom.sendEmailFunctionUrl;
-          return;
-        }
+        this.functionUrl = outputs.custom?.sendEmailFunctionUrl ?? null;
       }
-    } catch (e) {
-      console.warn('Could not load amplify_outputs.json, using fallback');
+    } catch {
+      console.warn('Could not load amplify_outputs.json');
     }
-    
-    // Fallback for local development
-    this.functionUrl = 'http://localhost:3000/send-email';
   }
 
+  /**
+   * Ensure the function URL is loaded before making requests
+   */
   private async ensureFunctionUrl(): Promise<string> {
     if (!this.functionUrl) {
       await this.loadFunctionUrl();
     }
-    
+
     if (!this.functionUrl) {
-      throw new Error('Email function URL not configured');
+      throw new Error('Service email non configuré');
     }
-    
+
     return this.functionUrl;
   }
 
+  /**
+   * Send contact form data to the backend
+   */
   sendContactEmail(formData: ContactFormData): Observable<EmailResponse> {
     return from(this.ensureFunctionUrl()).pipe(
-      switchMap(url => 
-        this.http.post<EmailResponse>(url, formData)
-      ),
+      switchMap(url => this.http.post<EmailResponse>(url, formData)),
       map(response => ({
         success: true,
         message: response.message || 'Message envoyé avec succès'
       })),
-      catchError(error => {
+      catchError((error: HttpErrorResponse) => {
         console.error('Email sending error:', error);
-        throw {
+        return throwError(() => ({
           success: false,
-          message: 'Une erreur est survenue lors de l\'envoi',
+          message: error.error?.error || 'Une erreur est survenue lors de l\'envoi',
           error: error.message
-        };
+        }));
       })
     );
   }
