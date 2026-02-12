@@ -1,7 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import {
   PageHeroComponent,
   ButtonComponent
@@ -14,7 +13,6 @@ import { EmailService } from '../../core/services/email.service';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule,
     PageHeroComponent,
     ButtonComponent
   ],

@@ -14,17 +14,17 @@
           <!-- Photo with decorative ring -->
           <div class="relative inline-block mb-6">
             <div class="absolute inset-0 rounded-full border-4 border-primary/30 scale-110 group-hover:scale-115 transition-transform duration-300"></div>
-            <img 
-              [src]="member.photo" 
+            <img
+              [src]="member.photo"
               [alt]="member.name"
               class="w-40 h-40 rounded-full object-cover mx-auto relative z-10 border-4 border-white shadow-md"
               loading="lazy">
-            
+
             <!-- Social icons overlay on hover -->
             <div class="absolute inset-0 rounded-full bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 z-20">
               @if (member.social.linkedin) {
-                <a 
-                  [href]="member.social.linkedin" 
+                <a
+                  [href]="member.social.linkedin"
                   target="_blank"
                   class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary hover:bg-gray-100 transition-colors">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -33,7 +33,7 @@
                 </a>
               }
               @if (member.social.email) {
-                <a 
+                <a
                   [href]="'mailto:' + member.social.email"
                   class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary hover:bg-gray-100 transition-colors">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,25 +60,25 @@
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="heading-2 mb-6">Une équipe pluridisciplinaire</h2>
       <p class="body-text text-gray-600 mb-8">
-        Chez SEC-CONSULTING, nous croyons en la force du collectif. Notre équipe réunit des experts 
-        en comptabilité, audit, fiscalité, conseil stratégique, transformation digitale et formation. 
+        Chez SEC-CONSULTING, nous croyons en la force du collectif. Notre équipe réunit des experts
+        en comptabilité, audit, fiscalité, conseil stratégique, transformation digitale et formation.
         Cette complémentarité nous permet d'offrir des solutions intégrées et adaptées à chaque client.
       </p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         <div class="bg-white rounded-lg p-6 shadow-sm">
-          <div class="text-3xl font-bold text-primary mb-2">6+</div>
+          <div class="text-3xl font-bold text-primary mb-2">10+</div>
           <div class="text-sm text-gray-500">Consultants experts</div>
         </div>
         <div class="bg-white rounded-lg p-6 shadow-sm">
-          <div class="text-3xl font-bold text-primary mb-2">50+</div>
+          <div class="text-3xl font-bold text-primary mb-2">45+</div>
           <div class="text-sm text-gray-500">Missions réalisées</div>
         </div>
         <div class="bg-white rounded-lg p-6 shadow-sm">
-          <div class="text-3xl font-bold text-primary mb-2">100%</div>
+          <div class="text-3xl font-bold text-primary mb-2">95%</div>
           <div class="text-sm text-gray-500">Clients satisfaits</div>
         </div>
         <div class="bg-white rounded-lg p-6 shadow-sm">
-          <div class="text-3xl font-bold text-primary mb-2">8+</div>
+          <div class="text-3xl font-bold text-primary mb-2">12+</div>
           <div class="text-sm text-gray-500">Années d'expérience</div>
         </div>
       </div>

@@ -45,6 +45,32 @@ module.exports = {
         'section-y-mobile': '56px',
         'section-y': '96px',
       },
+      keyframes: {
+        'float-1': {
+          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+          '50%': { transform: 'translateY(-14px) rotate(6deg)' },
+        },
+        'float-2': {
+          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+          '50%': { transform: 'translateY(-18px) rotate(-5deg)' },
+        },
+        'float-3': {
+          '0%, 100%': { transform: 'translateY(0px) scale(1)' },
+          '50%': { transform: 'translateY(-10px) scale(1.08)' },
+        },
+        'float-4': {
+          '0%, 100%': { transform: 'translate(0px, 0px)' },
+          '25%': { transform: 'translate(6px, -12px)' },
+          '50%': { transform: 'translate(-4px, -8px)' },
+          '75%': { transform: 'translate(4px, -16px)' },
+        },
+      },
+      animation: {
+        'float-1': 'float-1 5s ease-in-out infinite',
+        'float-2': 'float-2 6s ease-in-out infinite',
+        'float-3': 'float-3 4s ease-in-out infinite',
+        'float-4': 'float-4 7s ease-in-out infinite',
+      },
       transitionTimingFunction: {
         'custom': 'cubic-bezier(0.2, 0.8, 0.2, 1)',
       },

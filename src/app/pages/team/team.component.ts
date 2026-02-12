@@ -65,7 +65,7 @@ export class TeamComponent {
       name: 'KALCHINGBE B.',
       role: 'Consultant en Comptabilité',
       bio: 'Expert en comptabilité, maîtrise des états financiers et diagnostics de performance.',
-      photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
+      photo: 'assets/team/avatar.webp', // avatar neutre sans visage
       social: {
         linkedin: '#',
         email: 'contact@sec-consulting.org'
@@ -75,7 +75,7 @@ export class TeamComponent {
       name: 'BAIYABE GONG-YA ERNEST',
       role: 'Expert en communication',
       bio: 'Expert en communication, maîtrise des états financiers et diagnostics de performance.',
-      photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
+      photo: 'assets/team/avatar.webp', // avatar neutre sans visage
       social: {
         linkedin: '#',
         email: 'contact@sec-consulting.org'
@@ -85,11 +85,11 @@ export class TeamComponent {
       name: 'ALLANGOM BESSADINGAR',
       role: 'Responsable Formation',
       bio: 'Conception pédagogique et animation de formations. Expertise en finance et management.',
-      photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+      photo: 'assets/team/avatar.webp', // avatar neutre sans visage
       social: {
         linkedin: '#',
-        email: 'contact@sec-consulting.org'
-      }
-    }
-  ];
+      email: 'contact@sec-consulting.org',
+    },
+  },
+];
 }

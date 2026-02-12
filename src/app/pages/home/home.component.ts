@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { 
+import {
   HeroSectionComponent,
   LogoMarqueeComponent,
   FeatureCardComponent,
@@ -35,12 +35,12 @@ export class HomeComponent {
   // Hero data
   hero = {
     eyebrow: "Cabinet d'expertise & conseil",
-    title: "SEC-CONSULTING — Expertise comptable, audit, conseil, digitalisation et formation",
+    title: "SEC-CONSULTING - Expertise comptable, audit, conseil, digitalisation et formation",
     subtitle: "Nous aidons les organisations à sécuriser leurs opérations, structurer leurs décisions et accélérer leur croissance grâce à une expertise rigoureuse et un accompagnement pragmatique.",
     badges: ['Rigueur & conformité', 'Décisions pilotées par les chiffres', 'Accompagnement opérationnel'],
     primaryCta: { label: 'Demander un diagnostic', route: '/contact' },
     secondaryCta: { label: 'Voir nos services', route: '/services' },
-    imageSrc: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80',
+    imageSrc: 'assets/img/hero-section.webp',
     imageAlt: 'Consultants en réunion'
   };
 
@@ -48,11 +48,11 @@ export class HomeComponent {
   partners = {
     title: 'Ils nous font confiance',
     logos: [
-      { name: 'Partenaire 1', src: '' },
-      { name: 'Partenaire 2', src: '' },
-      { name: 'Partenaire 3', src: '' },
-      { name: 'Partenaire 4', src: '' },
-      { name: 'Partenaire 5', src: '' },
+      { name: 'ARCEP', src: 'assets/partners/arcep.webp' },
+      { name: 'SOMMASOFT', src: 'assets/partners/lg.png' },
+      { name: 'SONACIM', src: 'assets/partners/sonacim.jpg' },
+      { name: 'SODELAC', src: 'assets/partners/sodelac.jpg' },
+      { name: 'ANSICE', src: 'assets/partners/ansice.png' },
       { name: 'Partenaire 6', src: '' }
     ]
   };
