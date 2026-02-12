@@ -12,6 +12,7 @@ import {
   CtaBandComponent,
   ButtonComponent
 } from '../../shared/components';
+import { InViewDirective } from '../../shared/directives/in-view.directive';
 
 @Component({
   selector: 'app-home',
@@ -27,7 +28,8 @@ import {
     KpiStripComponent,
     TestimonialCarouselComponent,
     CtaBandComponent,
-    ButtonComponent
+    ButtonComponent,
+    InViewDirective
   ],
   templateUrl: './home.component.html'
 })
@@ -48,12 +50,12 @@ export class HomeComponent {
   partners = {
     title: 'Ils nous font confiance',
     logos: [
-      { name: 'ARCEP', src: 'assets/partners/arcep.webp' },
-      { name: 'SOMMASOFT', src: 'assets/partners/lg.png' },
-      { name: 'SONACIM', src: 'assets/partners/sonacim.jpg' },
-      { name: 'SODELAC', src: 'assets/partners/sodelac.jpg' },
-      { name: 'ANSICE', src: 'assets/partners/ansice.png' },
-      { name: 'Partenaire 6', src: '' }
+      { name: 'ARCEP', src: 'assets/partners/arcep.webp', url: 'https://www.arcep.td' },
+      { name: 'SOMMASOFT', src: 'assets/partners/lg.png', url: 'https://www.sommasoft.com' },
+      { name: 'SONACIM', src: 'assets/partners/sonacim.jpg', url: 'https://www.facebook.com/sonacim' },
+      { name: 'SODELAC', src: 'assets/partners/sodelac.jpg', url: 'https://www.facebook.com/SODELAC' },
+      { name: 'ANSICE', src: 'assets/partners/ansice.png', url: 'https://www.ansice.td' },
+      { name: 'Assemblée Nationale', src: 'assets/partners/ant.webp', url: 'https://www.assemblee-nationale.td' }
     ]
   };
 
@@ -140,7 +142,7 @@ export class HomeComponent {
   kpis = [
     { value: '95%', label: 'Satisfaction client' },
     { value: '2×', label: 'Amélioration (moy.)' },
-    { value: '8+', label: 'Années d\'expérience' }
+    { value: '10+', label: 'Années d\'expérience' }
   ];
 
   // Testimonials

@@ -114,28 +114,28 @@ export class ServicesComponent {
 
   testimonials = [
     {
-      rating: 5,
-      quote: 'L\'accompagnement sur la mise en place de notre ERP a été remarquable. L\'équipe a su s\'adapter à nos contraintes.',
-      name: 'Amadou Saleh',
-      role: 'DSI',
-      company: 'Groupe Industriel',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80'
+      rating: 4,
+      quote: 'Leurs experts ont identifié nos leviers d\'optimisation fiscale tout en sécurisant nos positions réglementaires. Un cabinet alliant maîtrise des normes internationales et connaissance du contexte tchadien.',
+      name: 'Le Directeur Général',
+      role: 'Direction Générale',
+      company: 'ARCEP / OTRT',
+      avatar: 'assets/team/avatar.webp'
     },
     {
       rating: 5,
-      quote: 'Grâce à SEC-CONSULTING, notre comptabilité est maintenant structurée et nos clôtures sont fluides.',
-      name: 'Mariam Hassan',
-      role: 'Responsable Financier',
-      company: 'ONG Internationale',
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80'
+      quote: 'Le business plan et l\'audit organisationnel ont été des pièces maîtresses dans la redéfinition de notre stratégie industrielle. Des analyses financières précises et des recommandations concrètes pour mieux piloter nos investissements.',
+      name: 'Le Directeur Général',
+      role: 'Direction Générale',
+      company: 'SONACIM',
+      avatar: 'assets/team/avatar.webp'
     },
     {
-      rating: 5,
-      quote: 'Les formations dispensées ont permis à notre équipe de monter en compétence rapidement.',
-      name: 'Youssouf Ali',
-      role: 'DRH',
-      company: 'Entreprise de Services',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80'
+      rating: 4,
+      quote: 'L\'installation de nos logiciels de gestion couplée à une formation sur mesure a transformé les compétences de nos équipes financières. Un transfert de compétences immédiat et durable. Nous recommandons vivement leur approche pédagogique.',
+      name: 'La Direction',
+      role: 'Direction',
+      company: 'SODELAC',
+      avatar: 'assets/team/avatar.webp'
     }
   ];
 }

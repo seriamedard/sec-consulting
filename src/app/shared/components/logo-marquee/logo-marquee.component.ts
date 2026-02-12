@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 interface Logo {
   name: string;
   src: string;
+  url?: string;
 }
 
 @Component({
@@ -18,15 +19,17 @@ interface Logo {
       <div class="relative">
         <div class="flex animate-marquee gap-16 items-center">
           @for (logo of duplicatedLogos(); track $index) {
-            <div class="flex-shrink-0 h-12 w-32 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+            <a [href]="logo.url || '#'" [attr.target]="logo.url ? '_blank' : null" [attr.rel]="logo.url ? 'noopener noreferrer' : null"
+               class="flex-shrink-0 h-12 w-32 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+               [class.cursor-default]="!logo.url">
               @if (logo.src) {
-                <img [src]="logo.src" [alt]="logo.name" class="max-h-full max-w-full object-contain">
+                <img [src]="logo.src" [alt]="logo.name" class="max-h-full max-w-full object-contain" width="128" height="48">
               } @else {
                 <div class="bg-gray-200 rounded-md px-4 py-2 text-gray-500 font-medium text-sm">
                   {{ logo.name }}
                 </div>
               }
-            </div>
+            </a>
           }
         </div>
       </div>

@@ -59,14 +59,14 @@
     </div>
 
     <div class="flex flex-col sm:flex-row justify-center gap-4 mt-12">
-      <app-button 
-        href="assets/docs/brochure.pdf" 
+      <app-button
+        href="assets/docs/brochure.pdf"
         variant="ghost"
         target="_blank">
         Télécharger la brochure
       </app-button>
-      <app-button 
-        route="/contact" 
+      <app-button
+        route="/contact"
         variant="primary"
         icon="arrow-right">
         Parler à un consultant
@@ -83,33 +83,35 @@
 </app-steps>
 
 <!-- Proof / KPI Section -->
-<section class="section bg-soft-bg-1">
+<section class="section bg-soft-bg-1 overflow-hidden">
   <div class="container-custom">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       <div>
-        <app-section-title
-          [centered]="false"
-          title="Des résultats concrets, une relation durable"
-          subtitle="Nous privilégions la clarté, la conformité et l'impact mesurable dans la durée.">
-        </app-section-title>
-        
-        <div class="mt-8">
+        <div appInView="animate-slide-left">
+          <app-section-title
+            [centered]="false"
+            title="Des résultats concrets, une relation durable"
+            subtitle="Nous privilégions la clarté, la conformité et l'impact mesurable dans la durée.">
+          </app-section-title>
+        </div>
+
+        <div class="mt-8" appInView="animate-fade-up" [animationDelay]="200">
           <app-kpi-strip [kpis]="kpis"></app-kpi-strip>
         </div>
 
-        <div class="mt-8">
+        <div class="mt-8" appInView="animate-fade-up" [animationDelay]="400">
           <app-button route="/etudes-de-cas" variant="primary" icon="arrow-right">
             Voir nos références
           </app-button>
         </div>
       </div>
-      <div class="relative">
-        <img 
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" 
+      <div class="relative" appInView="animate-slide-right">
+        <img
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
           alt="Travail d'équipe"
           class="w-full rounded-lg shadow-md"
           loading="lazy">
-        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/30 rounded-lg -z-10"></div>
+        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/30 rounded-lg -z-10 animate-pulse"></div>
       </div>
     </div>
   </div>
@@ -127,5 +129,5 @@
   text="Obtenez un diagnostic initial et une feuille de route adaptée à votre organisation."
   ctaLabel="Demander un diagnostic"
   ctaRoute="/contact"
-  variant="primary">
+  variant="dark">
 </app-cta-band>
