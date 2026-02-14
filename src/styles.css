@@ -36,7 +36,9 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth retiré ici car il entre en conflit
+     avec le scroll-to-top du routeur Angular.
+     Le scroll smooth est géré uniquement pour les ancres via JS. */
 }
 
 body {

@@ -9,7 +9,7 @@
 
 <!-- Services Sections -->
 @for (service of services; track service.id; let i = $index; let isEven = $even) {
-  <section 
+  <section
     [id]="service.id"
     class="section"
     [class.bg-white]="isEven"
@@ -23,7 +23,7 @@
           </span>
           <h2 class="heading-2 mb-4">{{ service.title }}</h2>
           <p class="body-text text-gray-600 mb-6">{{ service.description }}</p>
-          
+
           <ul class="space-y-3 mb-8">
             @for (bullet of service.bullets; track bullet) {
               <li class="flex items-start gap-3">
@@ -35,8 +35,8 @@
             }
           </ul>
 
-          <app-button 
-            route="/contact" 
+          <app-button
+            route="/contact"
             variant="primary"
             icon="arrow-right">
             {{ service.ctaLabel }}
@@ -46,12 +46,12 @@
         <!-- Image -->
         <div [class.md:order-2]="isEven" [class.md:order-1]="!isEven">
           <div class="relative">
-            <img 
-              [src]="service.imageSrc" 
+            <img
+              [src]="service.imageSrc"
               [alt]="service.title"
               class="w-full rounded-lg shadow-md object-cover aspect-[4/3]"
               loading="lazy">
-            <div 
+            <div
               class="absolute -z-10 w-32 h-32 rounded-lg"
               [class.-bottom-4]="isEven"
               [class.-right-4]="isEven"
@@ -80,5 +80,5 @@
   text="Expliquez-nous votre contexte. Nous vous proposons une orientation claire et une première feuille de route."
   ctaLabel="Demander un devis"
   ctaRoute="/contact"
-  variant="primary">
+  variant="dark">
 </app-cta-band>

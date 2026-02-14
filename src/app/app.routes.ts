@@ -32,6 +32,16 @@ export const routes: Routes = [
     title: 'Contact — SEC-CONSULTING'
   },
   {
+    path: 'mentions-legales',
+    loadComponent: () => import('./pages/legal-notice/legal-notice.component').then(m => m.LegalNoticeComponent),
+    title: 'Mentions légales — SEC-CONSULTING'
+  },
+  {
+    path: 'politique-de-confidentialite',
+    loadComponent: () => import('./pages/privacy-policy/privacy-policy.component').then(m => m.PrivacyPolicyComponent),
+    title: 'Politique de confidentialité — SEC-CONSULTING'
+  },
+  {
     path: '**',
     redirectTo: ''
   }

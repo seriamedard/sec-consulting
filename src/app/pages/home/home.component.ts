@@ -148,28 +148,28 @@ export class HomeComponent {
   // Testimonials
   testimonials = [
     {
-      rating: 5,
-      quote: 'Une équipe rigoureuse, réactive, avec des livrables clairs. SEC-CONSULTING nous a permis de structurer notre reporting financier en quelques semaines.',
-      name: 'Ibrahim Mahamat',
-      role: 'Directeur Général',
-      company: 'Entreprise ABC',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80'
+      rating: 4,
+      quote: 'Leurs experts ont identifié nos leviers d\'optimisation fiscale tout en sécurisant nos positions réglementaires. Un cabinet alliant maîtrise des normes internationales et connaissance du contexte tchadien.',
+      name: 'Le Directeur Général',
+      role: 'Direction Générale',
+      company: 'ARCEP / OTRT',
+      avatar: 'assets/team/avatar.webp'
     },
     {
       rating: 5,
-      quote: 'Le diagnostic a été précis et le plan d\'action immédiatement exploitable. Nous avons réduit nos écarts de clôture de 40%.',
-      name: 'Fatima Oumar',
-      role: 'DAF',
-      company: 'Organisation XYZ',
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80'
+      quote: 'Le business plan et l\'audit organisationnel ont été des pièces maîtresses dans la redéfinition de notre stratégie industrielle. Des analyses financières précises et des recommandations concrètes pour mieux piloter nos investissements.',
+      name: 'Le Directeur Général',
+      role: 'Direction Générale',
+      company: 'SONACIM',
+      avatar: 'assets/team/avatar.webp'
     },
     {
-      rating: 5,
-      quote: 'Nos reportings sont enfin structurés, avec des KPI utiles au pilotage. L\'équipe a fait preuve d\'une grande pédagogie.',
-      name: 'Moussa Deby',
-      role: 'COO',
-      company: 'Structure DEF',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80'
+      rating: 4,
+      quote: 'L\'installation de nos logiciels de gestion couplée à une formation sur mesure a transformé les compétences de nos équipes financières. Un transfert de compétences immédiat et durable. Nous recommandons vivement leur approche pédagogique.',
+      name: 'La Direction',
+      role: 'Direction',
+      company: 'SODELAC',
+      avatar: 'assets/team/avatar.webp'
     }
   ];
 }
